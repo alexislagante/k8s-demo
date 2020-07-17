@@ -7,6 +7,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 const loremIpsum = require("lorem-ipsum").loremIpsum;
 
+app.get('/healthcheck', function (req, res) {
+    res.send({ success: true });
+});
+
 app.get('/', function (req, res) {
     res.send({
         hostname: req.headers.host,

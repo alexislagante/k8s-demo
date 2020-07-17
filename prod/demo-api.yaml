@@ -6,7 +6,12 @@ spec:
   selector:
     matchLabels:
       app: demo-api-prod
-  replicas: 5
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
   template:
     metadata:
       labels:
