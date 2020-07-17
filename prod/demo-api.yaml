@@ -19,7 +19,8 @@ spec:
     spec:
       containers:
         - name: demo-api-prod
-          image: gcr.io/alexislagante/demo-api:v1
+          image: gcr.io/alexislagante/demo-api:1.0
+          imagePullPolicy: Always
           resources:
             limits:
               cpu: "50m"
