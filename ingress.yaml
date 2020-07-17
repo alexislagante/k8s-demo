@@ -20,10 +20,10 @@ spec:
             backend:
               serviceName: demo-api-service-staging
               servicePort: 80
-    - host: demo-api.prod.awesomeweb.app
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: demo-api-service-prod
-              servicePort: 80
+#    - host: demo-api.prod.awesomeweb.app
+#      http:
+#        paths:
+#          - path: /
+#            backend:
+#              serviceName: demo-api-service-prod
+#              servicePort: 80

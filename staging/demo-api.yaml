@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: demo-api-staging
-  replicas: 3
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -31,6 +31,18 @@ spec:
               value: staging
           ports:
             - containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 3000
+            initialDelaySeconds: 2
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /healthcheck
+              port: 3000
+            initialDelaySeconds: 2
+            periodSeconds: 10
 ---
 
 apiVersion: v1
