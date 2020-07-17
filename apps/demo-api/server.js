@@ -5,6 +5,7 @@ const os = require("os");
 const uuidv4 = require('uuid').v4;
 const app = express();
 const port = process.env.PORT || 3000;
+const loremIpsum = require("lorem-ipsum").loremIpsum;
 
 app.get('/', function (req, res) {
     res.send({
@@ -12,7 +13,8 @@ app.get('/', function (req, res) {
         server_id: ip.address(),
         local_hostname: os.hostname(),
         environment: process.env.APP_ENV || 'dev',
-        uuid: uuidv4()
+        uuid: uuidv4(),
+        message: loremIpsum()
     });
 });
 
